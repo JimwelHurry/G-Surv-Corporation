@@ -184,15 +184,14 @@
   </div><!-- End Section Title -->
 
   <div class="container" data-aos="fade" data-aos-delay="100">
+
     <div class="row gy-4">
 
       <!-- Contact Form -->
       <div class="col-lg-6">
-        <form action="https://api.web3forms.com/submit" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+        <form id="contact-form" method="POST">
+          <input type="hidden" name="access_key" value="33e86504-c05d-4b7f-b141-d362a2005c39">
           <div class="row gy-4">
-
-            <!-- Replace with your Access Key -->
-            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
 
             <!-- Full Name -->
             <div class="col-md-6">
@@ -230,24 +229,26 @@
               <textarea name="inquiry_message" rows="6" class="form-control" placeholder="Inquiry Message *" required></textarea>
             </div>
 
-            <!-- Select a services -->
+            <!-- Select a Product -->
             <div class="col-md-12">
-              <label for="product">Select a Services</label>
-              <select id="product" name="product" class="form-control">
-                <option value="Select a Services">Select a Services</option>
+              <label for="Services">Select a Services</label>
+              <select id="Services" name="Services" class="form-control">
+                <option value="">Select a Services</option>
                 <option value="Relocation Survey">Relocation Survey</option>
                 <option value="Verification Survey">Verification Survey</option>
-                <option value="Topographic Survey">Topographic Survey</option>
+                <option value="Topographic Survey<">Topographic Survey</option>
                 <option value="Subdivision Survey">Subdivision Survey</option>
                 <option value="Consolidation Survey">Consolidation Survey</option>
                 <option value="Consolidation - Subdivision Survey">Consolidation - Subdivision Survey</option>
                 <option value="As-Built Survey">As-Built Survey</option>
-                <option value="Hydrographic & bathymetric Survey">Hydrographic & bathymetric Survey</option>
-                <option value="CAAP Height Clearance Application">CAAP Height Clearance Application</option>
-                <option value="Aerial Mapping">Aerial Mapping</option>
+                <option value="Hydrographic & Bathymetric Survey ">Hydrographic & Bathymetric Survey </option>
+                <option value="CAAP Height Clearance Application">CAAP Height Clearance Application </option>
+                <option value="Arial Mapping">Arial Mapping</option>
                 <option value="Lot Plan With Vicinity Map">Lot Plan With Vicinity Map</option>
                 <option value="Sketch Plan">Sketch Plan</option>
                 <option value="CAD Plotting">CAD Plotting</option>
+        
+              
               </select>
             </div>
 
@@ -257,20 +258,30 @@
                 Send Message
               </button>
             </div>
+            
 
           </div>
         </form>
+        <div id="form-response" class="text-center mt-3"></div>
       </div><!-- End Contact Form -->
 
       <!-- Display Image for Ads -->
       <div class="col-lg-6">
-        <img src="assets/img/ads/ads.jpg" alt="CHCNAV Ads" style="width: 100%; height: auto; border: 2px solid #ccc;">
-      </div><!-- End Ads Image -->
+        <iframe 
+          src="https://www.youtube.com/embed/OoEfO6tYBS8?start=7&autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0" 
+          style="width: 100%; height: auto; aspect-ratio: 16/9; border: 2px solid #ccc;" 
+          frameborder="0" 
+          allow="autoplay; encrypted-media" 
+          allowfullscreen>
+        </iframe>
+      </div><!-- End Video Embed -->
 
     </div>
+
   </div>
 
 </section><!-- End Contact Section -->
+
 <script>
 document.getElementById("contact-form").addEventListener("submit", function(event) {
   event.preventDefault(); // Prevent default form submission
@@ -296,7 +307,6 @@ document.getElementById("contact-form").addEventListener("submit", function(even
   });
 });
 </script>
-
 
 
     <!-- client logos -->
