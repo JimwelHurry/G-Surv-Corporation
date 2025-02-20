@@ -187,7 +187,8 @@
 
       <!-- Contact Form -->
       <div class="col-lg-6">
-        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+        <form id="contact-form" method="POST">
+          <input type="hidden" name="access_key" value="33e86504-c05d-4b7f-b141-d362a2005c39">
           <div class="row gy-4">
 
             <!-- Full Name -->
@@ -227,55 +228,89 @@
             </div>
 
             <!-- Select a Product -->
-<div class="col-md-12">
-  <label for="product">Select a Product</label>
-  <select id="product" name="product" class="form-control">
-    <option value="Select a Product">Select a Product</option>
-    <option value="GNSS Smart Antennas CHCNAV i73+">GNSS Smart Antennas CHCNAV i73+</option>
-    <option value="GNSS Smart Antennas CHCNAV i76">GNSS Smart Antennas CHCNAV i76</option>
-    <option value="GNSS Smart Antennas CHCNAV i89">GNSS Smart Antennas CHCNAV i89</option>
-    <option value="GNSS Smart Antennas CHCNAV iBASE">GNSS Smart Antennas CHCNAV iBASE</option>
-    <option value="Controllers & Tablets CHCNAV LT60H">Controllers & Tablets CHCNAV LT60H</option>
-    <option value="Controllers & Tablets CHCNAV LT800">Controllers & Tablets CHCNAV LT800</option>
-    <option value="Controllers & Tablets CHCNAV LT800H">Controllers & Tablets CHCNAV LT800H</option>
-    <option value="Controllers & Tablets CHCNAV HCE600">Controllers & Tablets CHCNAV HCE600</option>
-    <option value="Surveying & Mapping Software CHCNAV LandStar">Surveying & Mapping Software CHCNAV LandStar</option>
-    <option value="Surveying & Mapping Software CHCNAV CGO">Surveying & Mapping Software CHCNAV CGO</option>
-    <option value="Surveying & Mapping Software CHCNAV MapCloud">Surveying & Mapping Software CHCNAV MapCloud</option>
-    <option value="Surveying & Mapping Software CHCNAV CGBAS">Surveying & Mapping Software CHCNAV CGBAS</option>
-    <option value="Total Stations CHCNAV CTS-112R4">Total Stations CHCNAV CTS-112R4</option>
-    <option value="Total Stations CHCNAV CTS-A100">Total Stations CHCNAV CTS-A100</option>
-    <option value="3D Mobile Mapping CHCNAV RS10">3D Mobile Mapping CHCNAV RS10</option>
-    <option value="Software CHCNAV CoPre">Software CHCNAV CoPre</option>
-    <option value="Software CHCNAV CoProcess">Software CHCNAV CoProcess</option>
-    <option value="Marine Surveying CHCNAV Apache 3">Marine Surveying CHCNAV Apache 3</option>
-    <option value="Hydrographic Sensors CHCNAV D270">Hydrographic Sensors CHCNAV D270</option>
-    <option value="Hydrographic Sensors CHCNAV D390">Hydrographic Sensors CHCNAV D390</option>
-  </select>
-</div>
-
+            <div class="col-md-12">
+              <label for="product">Select a Product</label>
+              <select id="product" name="product" class="form-control">
+                <option value="">Select a Product</option>
+                <option value="GNSS Smart Antennas CHCNAV i73+">GNSS Smart Antennas CHCNAV i73+</option>
+                <option value="GNSS Smart Antennas CHCNAV i76">GNSS Smart Antennas CHCNAV i76</option>
+                <option value="GNSS Smart Antennas CHCNAV i89">GNSS Smart Antennas CHCNAV i89</option>
+                <option value="GNSS Smart Antennas CHCNAV iBASE">GNSS Smart Antennas CHCNAV iBASE</option>
+                <option value="Controllers & Tablets CHCNAV LT60H">Controllers & Tablets CHCNAV LT60H</option>
+                <option value="Controllers & Tablets CHCNAV LT800">Controllers & Tablets CHCNAV LT800</option>
+                <option value="Controllers & Tablets CHCNAV LT800H">Controllers & Tablets CHCNAV LT800H</option>
+                <option value="Controllers & Tablets CHCNAV HCE600">Controllers & Tablets CHCNAV HCE600</option>
+                <option value="Surveying & Mapping Software CHCNAV LandStar">Surveying & Mapping Software CHCNAV LandStar</option>
+                <option value="Surveying & Mapping Software CHCNAV CGO">Surveying & Mapping Software CHCNAV CGO</option>
+                <option value="Surveying & Mapping Software CHCNAV MapCloud">Surveying & Mapping Software CHCNAV MapCloud</option>
+                <option value="Surveying & Mapping Software CHCNAV CGBAS">Surveying & Mapping Software CHCNAV CGBAS</option>
+                <option value="Total Stations CHCNAV CTS-112R4">Total Stations CHCNAV CTS-112R4</option>
+                <option value="Total Stations CHCNAV CTS-A100">Total Stations CHCNAV CTS-A100</option>
+                <option value="3D Mobile Mapping CHCNAV RS10">3D Mobile Mapping CHCNAV RS10</option>
+                <option value="3D Mobile Mapping CHCNAV RS10">3D Mobile Mapping CHCNAV AlphaAir 10</option>
+                <option value="Software CHCNAV CoPre">Software CHCNAV CoPre</option>
+                <option value="Software CHCNAV CoProcess">Software CHCNAV CoProcess</option>
+                <option value="Marine Surveying CHCNAV Apache 3">Marine Surveying CHCNAV Apache 3</option>
+                <option value="Hydrographic Sensors CHCNAV D270">Hydrographic Sensors CHCNAV D270</option>
+                <option value="Hydrographic Sensors CHCNAV D390">Hydrographic Sensors CHCNAV D390</option>
+              </select>
+            </div>
 
             <!-- Submit Button -->
-            <<div class="col-md-12 text-center">
-              
-              <button type="submit">Send Message</button>
+            <div class="col-md-12 text-center">
+              <button type="submit" style="background-color: #FF4500; color: white; padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease;">
+                Send Message
+              </button>
             </div>
+            
 
           </div>
         </form>
+        <div id="form-response" class="text-center mt-3"></div>
       </div><!-- End Contact Form -->
 
       <!-- Display Image for Ads -->
       <div class="col-lg-6">
-        <img src="assets/img/ads/ads.jpg" alt="CHCNAV Ads" style="width: 100%; height: auto; border: 2px solid #ccc;">
-      </div><!-- End Ads Image -->
-
+        <iframe 
+          src="https://www.youtube.com/embed/OoEfO6tYBS8?start=7&autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0" 
+          style="width: 100%; height: auto; aspect-ratio: 16/9; border: 2px solid #ccc;" 
+          frameborder="0" 
+          allow="autoplay; encrypted-media" 
+          allowfullscreen>
+        </iframe>
+      </div><!-- End Video Embed -->
 
     </div>
 
   </div>
 
 </section><!-- End Contact Section -->
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent default form submission
+  
+  var form = event.target;
+  var formData = new FormData(form);
+
+  fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData
+  })
+  .then(response => response.json())
+  .then(result => {
+    if (result.success) {
+      document.getElementById("form-response").innerHTML = '<p style="color: green;">Your message has been sent successfully!</p>';
+      form.reset();
+    } else {
+      document.getElementById("form-response").innerHTML = '<p style="color: red;">There was an error. Please try again.</p>';
+    }
+  })
+  .catch(error => {
+    document.getElementById("form-response").innerHTML = '<p style="color: red;">There was an error. Please try again.</p>';
+  });
+});
+</script>
 
 
 
