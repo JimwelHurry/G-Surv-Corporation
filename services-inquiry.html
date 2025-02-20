@@ -184,18 +184,15 @@
   </div><!-- End Section Title -->
 
   <div class="container" data-aos="fade" data-aos-delay="100">
-
     <div class="row gy-4">
 
       <!-- Contact Form -->
       <div class="col-lg-6">
-
         <form action="https://api.web3forms.com/submit" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
           <div class="row gy-4">
 
             <!-- Replace with your Access Key -->
-            <!-- Replace with your Access Key -->
-    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
 
             <!-- Full Name -->
             <div class="col-md-6">
@@ -233,32 +230,32 @@
               <textarea name="inquiry_message" rows="6" class="form-control" placeholder="Inquiry Message *" required></textarea>
             </div>
 
-           <!-- Select a Product -->
-<div class="col-md-12">
-  <label for="product">Select a Product</label>
-  <select id="product" name="product" class="form-control">
-    <option value="Select a Product">Select a Product</option>
-    <option value="Relocation Survey">Relocation Survey</option>
-    <option value="Verification Survey">Verification Survey</option>
-    <option value="Topographic Survey">Topographic Survey</option>
-    <option value="Subdivision Survey">Subdivision Survey</option>
-    <option value="Consolidation Survey">Consolidation Survey</option>
-    <option value="Consolidation - Subdivision Survey">Consolidation - Subdivision Survey</option>
-    <option value="As-Built Survey">As-Built Survey</option>
-    <option value="Hydrographic & bathymetric Survey">Hydrographic & bathymetric Survey</option>
-    <option value="CAAP Height Clearance Application">CAAP Height Clearance Application</option>
-    <option value="Aerial Mapping">Aerial Mapping</option>
-    <option value="Lot Plan With Vicinity Map">Lot Plan With Vicinity Map</option>
-    <option value="Sketch Plan">Sketch Plan</option>
-    <option value="CAD Plotting">CAD Plotting</option>
-  </select>
-</div>
+            <!-- Select a services -->
+            <div class="col-md-12">
+              <label for="product">Select a Services</label>
+              <select id="product" name="product" class="form-control">
+                <option value="Select a Services">Select a Services</option>
+                <option value="Relocation Survey">Relocation Survey</option>
+                <option value="Verification Survey">Verification Survey</option>
+                <option value="Topographic Survey">Topographic Survey</option>
+                <option value="Subdivision Survey">Subdivision Survey</option>
+                <option value="Consolidation Survey">Consolidation Survey</option>
+                <option value="Consolidation - Subdivision Survey">Consolidation - Subdivision Survey</option>
+                <option value="As-Built Survey">As-Built Survey</option>
+                <option value="Hydrographic & bathymetric Survey">Hydrographic & bathymetric Survey</option>
+                <option value="CAAP Height Clearance Application">CAAP Height Clearance Application</option>
+                <option value="Aerial Mapping">Aerial Mapping</option>
+                <option value="Lot Plan With Vicinity Map">Lot Plan With Vicinity Map</option>
+                <option value="Sketch Plan">Sketch Plan</option>
+                <option value="CAD Plotting">CAD Plotting</option>
+              </select>
+            </div>
 
             <!-- Submit Button -->
             <div class="col-md-12 text-center">
-              
-
-              <button type="submit">Send Message</button>
+              <button type="submit" style="background-color: #FF4500; color: white; padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease;">
+                Send Message
+              </button>
             </div>
 
           </div>
@@ -271,11 +268,34 @@
       </div><!-- End Ads Image -->
 
     </div>
-
   </div>
 
 </section><!-- End Contact Section -->
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent default form submission
+  
+  var form = event.target;
+  var formData = new FormData(form);
 
+  fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData
+  })
+  .then(response => response.json())
+  .then(result => {
+    if (result.success) {
+      document.getElementById("form-response").innerHTML = '<p style="color: green;">Your message has been sent successfully!</p>';
+      form.reset();
+    } else {
+      document.getElementById("form-response").innerHTML = '<p style="color: red;">There was an error. Please try again.</p>';
+    }
+  })
+  .catch(error => {
+    document.getElementById("form-response").innerHTML = '<p style="color: red;">There was an error. Please try again.</p>';
+  });
+});
+</script>
 
 
 
