@@ -377,13 +377,30 @@
 <section id="promo-video" class="promo-video section">
   <div class="video-container">
     <iframe 
-      src="https://www.youtube.com/embed/OoEfO6tYBS8?start=7&autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0" 
+      id="youtube-video"
+      src="https://www.youtube.com/embed/OoEfO6tYBS8?start=7&autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0&enablejsapi=1" 
       frameborder="0" 
       allow="autoplay; encrypted-media" 
       allowfullscreen>
     </iframe>
   </div>
 </section>
+
+<script>
+  function onYouTubeIframeAPIReady() {
+    var player = new YT.Player('youtube-video', {
+      events: {
+        'onStateChange': function(event) {
+          if (event.data === YT.PlayerState.ENDED) {
+            player.seekTo(7); // Bumalik sa simula (7 seconds)
+          }
+        }
+      }
+    });
+  }
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
 
 <!-- CSS for Fullscreen Effect -->
 <style>
